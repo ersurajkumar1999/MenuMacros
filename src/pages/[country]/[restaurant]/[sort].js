@@ -74,6 +74,9 @@ export default function Restaurant() {
                 <Typography variant="h4" component="h1" gutterBottom style={{ fontWeight: 'bold', color: theme.palette.primary.main }}>
                   {selectedResturant?.name || 'Restaurant'}
                 </Typography>
+                <div
+                style={{ padding: '0 20px' }}
+                >
                 <FormControl fullWidth>
                   <InputLabel id="sort-select-label">Sort By</InputLabel>
                   <Select
@@ -88,6 +91,7 @@ export default function Restaurant() {
                
                   </Select>
                 </FormControl>
+                </div>
               </Grid>
 
             </Grid>

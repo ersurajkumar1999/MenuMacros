@@ -19,7 +19,12 @@ export default function Home() {
   }, [selectedCountry, searchTerm]);
 
   return (
-    <div style={{ padding: 0, margin: 0 }}>
+    <div style={{ 
+      padding: 0,
+      margin: 0,
+      // remove the spacinggggg
+      
+    }}>
       <Head>
         <title>Menu Macros</title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
