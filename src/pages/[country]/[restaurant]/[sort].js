@@ -68,14 +68,14 @@ export default function Restaurant() {
       
       <Paper 
           elevation={0}
-          style={{ padding: '40px 20px', margin: '20px 0', backgroundColor: theme.palette.background.default }}>
+          style={{ padding: '40px 20px 40px 20px', margin: '20px 0px 20px 0px', backgroundColor: theme.palette.background.default }}>
             <Grid container spacing={2} alignItems="center" justifyContent="center">
               <Grid item xs={12} md={6} style={{ textAlign: 'center' }}>
                 <Typography variant="h4" component="h1" gutterBottom style={{ fontWeight: 'bold', color: theme.palette.primary.main }}>
                   {selectedResturant?.name || 'Restaurant'}
                 </Typography>
                 <div
-                style={{ padding: '0 20px' }}
+                style={{ padding: '0px 20px' }}
                 >
                 <FormControl fullWidth>
                   <InputLabel id="sort-select-label">Sort By</InputLabel>
@@ -100,7 +100,7 @@ export default function Restaurant() {
 
         
 
-        <List style={{ margin: '0 15px' }}>
+      <List style={{ margin: '0px 15px', paddingInlineStart: '0px' }} >
           {filteredSortedMenu.map((item, index) => (
             <ListItem key={index} style={{ 
               marginBottom: '20px', 

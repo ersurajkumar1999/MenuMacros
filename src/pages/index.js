@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Container, Typography, TextField, MenuItem, List, ListItem, ListItemText, Card, CardContent, ThemeProvider, Box, Grid, Paper } from '@mui/material';
-import restaurants_ca from '../data/restaurants_ca'; 
-import restaurants_us from '../data/restaurants_us'; 
+import restaurants_ca from '../data/restaurants_ca';
+import restaurants_us from '../data/restaurants_us';
 import Link from 'next/link';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
@@ -19,11 +19,11 @@ export default function Home() {
   }, [selectedCountry, searchTerm]);
 
   return (
-    <div style={{ 
+    <div style={{
       padding: 0,
       margin: 0,
       // remove the spacinggggg
-      
+
     }}>
       <Head>
         <title>Menu Macros</title>
@@ -32,11 +32,11 @@ export default function Home() {
       <ThemeProvider theme={theme}>
         {/* Replace AppBar with Navbar */}
         <Navbar selectedCountry={selectedCountry} setSelectedCountry={setSelectedCountry} />
-        <Container maxWidth="lg" style={{ padding: '20px 0', backgroundColor: theme.palette.background.default }}>
+        <Container maxWidth="lg" style={{ padding: '20px 0px', backgroundColor: theme.palette.background.default }}>
           {/* Hero Section */}
-          <Paper 
-          elevation={0}
-          style={{ padding: '40px 20px', margin: '20px 0', backgroundColor: theme.palette.background.default }}>
+          <Paper
+            elevation={0}
+            style={{ padding: '40px 20px 40px 20px', margin: '20px 0px 20px 0px', backgroundColor: theme.palette.background.default }}>
             <Grid container spacing={2} alignItems="center" justifyContent="center">
               <Grid item xs={12} md={6}>
                 <Typography variant="h3" component="h1" gutterBottom style={{ fontWeight: 'bold', color: theme.palette.primary.main }}>
@@ -63,36 +63,34 @@ export default function Home() {
           </Paper>
 
           {/* Restaurant List */}
-          <List
-          // add margin to left and right 10px
-          style={{ margin: '0 15px' }}
-          >
+          <List style={{ margin: '0px 15px', paddingInlineStart: '0px' }} >
             {filteredRestaurants.map((restaurant, index) => (
-              <Link 
-                key={index} 
+              <Link
+                key={index}
                 href={`/${selectedCountry}/${encodeURIComponent(restaurant.name.replace(/\s+/g, '-').toLowerCase())}/high-protein`}
                 passHref
                 // remove the underline
                 style={{ textDecoration: 'none' }}
               >
-                <Card  style={{ 
-                  marginBottom: '20px', 
-                  backgroundColor: theme.palette.background.paper, 
+                <Card style={{
+                  marginBottom: '20px',
+                  backgroundColor: theme.palette.background.paper,
                   borderRadius: '12px',
                 }}>
                   <CardContent>
                     <ListItem disableGutters component="a" style={{ textDecoration: 'none' }}> {/* Add style here */}
-                      <ListItemText 
-                        primary={<Typography variant="h6" style={{ fontWeight: 'bold', color: theme.palette.text.primary,
-                        
-                      
-                      }}>{restaurant.name}</Typography>} 
-                        secondary={`Menu Items: ${restaurant.menu.length}`} 
+                      <ListItemText
+                        primary={<Typography variant="h6" style={{
+                          fontWeight: 'bold', color: theme.palette.text.primary,
+
+
+                        }}>{restaurant.name}</Typography>}
+                        secondary={`Menu Items: ${restaurant.menu.length}`}
                       />
                     </ListItem>
                   </CardContent>
                 </Card>
-              </Link> 
+              </Link>
             ))}
           </List>
         </Container>
